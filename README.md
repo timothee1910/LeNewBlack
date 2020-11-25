@@ -2,7 +2,7 @@
 ### Installation
 
 ```sh
-git clone ...
+gh repo clone timothee1910/LeNewBlack
 ```
 
 ### Execution of Dummy Fixtures
