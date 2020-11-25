@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+		
+		td, th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+		
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+	</style>
+	<section class="products">
+			<table>
+				<tr>
+					<th>Select</th>
+					<th>Collection</th>
+					<th>Name</th>
+					<th>Category</th>
+					<th>Size family</th>
+					<th>Model</th>
+					<th>Price</th>
+					<th>Variants</th>
+				</tr>
+				{% for product in products %}
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>{{ product.collection }}</td>
+					<td>{{ product.name }}</td>
+					<td>{{ product.category }}</td>
+					<td>{{ product.size }}</td>
+					<td>{{ product.model }}</td>
+					<td>{{ product.price }}€</td>
+					<td>{{ product.variants }}</td>
+					<td><a href="{{ path('product_edit', {id: product.id}) }}" class="btn btn-primary">Edit</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+	</section>
+{% endblock %}

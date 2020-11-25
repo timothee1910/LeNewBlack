@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% form_theme formProduct 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+<h1>Edition Product n° {{ id }}</h1>
+	{{ form_start(formProduct) }}
+	{{ form_row(formProduct.collection) }}
+	{{ form_row(formProduct.name) }}
+	{{ form_row(formProduct.category) }}
+	{{ form_row(formProduct.Size) }}
+	<span class="badge badge-secondary">34, 36, 38, 40, 42, 44</span>
+	{{ form_row(formProduct.model) }}
+	<span class="badge badge-secondary">A unique identifer for this product</span>
+	{{ form_row(formProduct.price) }}
+	{{ form_row(formProduct.variants) }}
+	<button type="submit" class="btn btn-success">
+			Enregistrer
+	</button>
+	{{ form_end(formProduct) }}
+{% endblock %}
